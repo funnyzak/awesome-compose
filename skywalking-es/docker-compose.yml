@@ -1,0 +1,63 @@
+version: '3'
+services:
+  skywalking-oap:
+    image: apache/skywalking-oap-server:8.9.1
+    container_name: skywalking-oap
+    restart: always
+    depends_on:
+      - es7
+    links:
+      - es7
+    ports:
+      - 11800:11800
+      - 12800:12800
+    environment:
+      TZ: Asia/Shanghai
+      SW_STORAGE: elasticsearch7
+      SW_STORAGE_ES_CLUSTER_NODES: es7:9200
+    networks:
+      - swnet
+  skywalking-ui:
+    image: apache/skywalking-ui:8.9.1
+    container_name: skywalking-ui
+    restart: always
+    depends_on:
+      - skywalking-oap
+    links:
+      - skywalking-oap
+    ports:
+      - 8080:8080
+    environment:
+      TZ: Asia/Shanghai
+      SW_OAP_ADDRESS: skywalking-oap:12800
+    networks:
+      - swnet
+  es7:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.6.0
+    container_name: es7
+    restart: always
+    privileged: true
+    environment:
+      - TZ=Asia/Shanghai
+      - node.name=es7
+      - node.master=true
+      - node.data=true
+      - cluster.name=docker-cluster
+      - bootstrap.memory_lock=true
+      - http.cors.enabled=true
+      - http.cors.allow-origin=*
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+      # 文件操作权限
+      - TAKE_FILE_OWNERSHIP=true
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - ./data/es/data:/usr/share/elasticsearch/data
+      - ./data/es/logs:/usr/share/elasticsearch/logs
+    networks:
+      - swnet
+networks:
+  swnet:
+    driver: bridge
