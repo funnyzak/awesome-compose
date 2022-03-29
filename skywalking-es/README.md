@@ -1,8 +1,6 @@
-## Compose sample application
+# Compose sample application
 
-### SkyWaling application using a Es7
-
-Project structure:
+## Bark Server application
 
 [_docker-compose.yml_](docker-compose.yml)
 
