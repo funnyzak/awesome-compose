@@ -82,7 +82,8 @@ After the application starts, navigate to `http://localhost:5005` in your web br
 
 ```bash
 $  curl localhost:5005       
-Cannot GET /
+<!doctype html>
+...</body></html>
 ```
 
 Stop and remove the containers
