@@ -25,6 +25,12 @@ services:
       - "8080:8080"
 ```
 
+[_nginx.conf_](nginx.conf)
+
+```conf
+
+```
+
 ## Deploy with docker-compose
 
 ```compose
