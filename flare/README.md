@@ -19,6 +19,19 @@ services:
     image: soulteary/flare:0.3.3
     container_name: flare-server
     restart: always
+    # 默认无需添加任何参数，如有特殊需求
+    # 可阅读文档 https://github.com/soulteary/docker-flare/blob/main/docs/advanced-startup.md
+    command: flare
+    # 启用账号登录模式
+    # command: flare --nologin=0
+    # environment:
+      # 如需开启用户登录模式，需要先设置 `nologin` 启动参数为 `0`
+      # 如开启 `nologin`，未设置 FLARE_USER，则默认用户为 `flare`
+      # - FLARE_USER=flare
+      # 指定你自己的账号密码，如未设置 `FLARE_USER`，则会默认生成密码并展示在应用启动日志中
+      # - FLARE_PASS=your_password
+      # 是否开启“使用向导”，访问 `/guide`
+      # - FLARE_GUIDE=1
     volumes:
       - ./app:/app
     ports:
