@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  app:
+    image: soulteary/flare:0.3.3
+    container_name: flare-server
+    restart: always
+    volumes:
+      - ./app:/app
+    ports:
+      - "5005:5005"

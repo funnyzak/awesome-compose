@@ -14,6 +14,7 @@ These samples provide a starting point for how to integrate different services u
 - [`SkyWalking`](https://github.com/funnyzak/awesome-compose/tree/master/skywalking-es) - Sample SkyWalking application
 with ElashSearch7.
 - [`BarkServer`](https://github.com/funnyzak/awesome-compose/tree/master/bark) - Sample Bark Server application.
+- [`Flare`](https://github.com/funnyzak/awesome-compose/tree/master/flare) - Sample Flare Server application.
 
 <!--lint disable awesome-toc-->
 

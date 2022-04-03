@@ -7,7 +7,7 @@ Project structure:
 ```text
 .
 ├── docker-compose.yaml
-
+├── nginx.conf
 ```
 
 [_docker-compose.yml_](docker-compose.yml)
@@ -50,10 +50,10 @@ CONTAINER ID        IMAGE                        COMMAND                  CREATE
 1ccde671c11f   finab/bark-server:latest         "bark-server"            2 minutes ago   Up 2 minutes       0.0.0.0:8080->8080/tcp, :::8080->8080/tcp           bark-server
 ```
 
-After the application starts, navigate to `http://localhost:80` in your web browser or run:
+After the application starts, navigate to `http://localhost:8080` in your web browser or run:
 
 ```bash
-$  curl localhost:2301       
+$  curl localhost:8080       
 Cannot GET /
 ```
 
