@@ -1,0 +1,17 @@
+ # author: leon<silenceace@gmail.com>
+ # https://hub.docker.com/_/mysql?tab=description
+version: '3.1'
+services:
+  mysql:
+    container_name: db-mysql
+    image: mysql:8.0-oracle
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    volumes:
+      - /SSD/db/mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=7788689
+      - character-set-server=utf8mb4 
+      - collation-server=utf8mb4_unicode_ci
+    ports:
+      - 3306:3306
