@@ -1,0 +1,23 @@
+# author: leon<silenceace@gmail.com>
+version: '3.1'
+services:
+  nextcloud:
+    container_name: app-nextcloud
+    image: nextcloud:24.0.0-apache
+    environment:
+      - MYSQL_HOST=db-mysql
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=u_nextcloud
+      - MYSQL_PASSWORD=hello_world
+    volumes:
+      - /DATA/nextcloud/data:/var/www/html/data
+      - /DATA/nextcloud/config:/var/www/html/config
+      - /DATA/nextcloud/apps:/var/www/html/apps
+      - /DATA/nextcloud/themes:/var/www/html/themes
+    restart: always
+    ports:
+      - 80:80
+networks:
+  default:
+    external:
+      name: database
