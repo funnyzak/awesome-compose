@@ -15,6 +15,7 @@ These samples provide a starting point for how to integrate different services u
 with ElashSearch7.
 - [`BarkServer`](https://github.com/funnyzak/awesome-compose/tree/master/bark) - Sample Bark Server application.
 - [`Flare`](https://github.com/funnyzak/awesome-compose/tree/master/flare) - Sample Flare Server application.
+- [`Portainer`](https://github.com/funnyzak/awesome-compose/tree/master/portainer) - Portainer Server application.
 
 <!--lint disable awesome-toc-->
 
