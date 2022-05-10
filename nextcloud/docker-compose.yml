@@ -4,12 +4,13 @@ services:
   nextcloud:
     container_name: app-nextcloud
     image: nextcloud:24.0.0-apache
+    privileged: true
     environment:
       - MYSQL_HOST=db-mysql
       - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=u_nextcloud
-      - MYSQL_PASSWORD=hello_world
-      - PHP_MEMORY_LIMIT=1024M
+      - MYSQL_USER=u_nc
+      - MYSQL_PASSWORD=helloworld
+      - PHP_MEMORY_LIMIT=2048M
       - PHP_UPLOAD_LIMIT=10240M
     volumes:
       - /DATA/nextcloud/data:/var/www/html/data
@@ -18,12 +19,8 @@ services:
       - /DATA/nextcloud/themes:/var/www/html/themes
     restart: always
     ports:
-      - 80:80
+      - 11205:80
 networks:
   default:
     external:
-      name: database
-
-
-
-
+      name: database_database
