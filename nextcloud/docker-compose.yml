@@ -9,6 +9,8 @@ services:
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=u_nextcloud
       - MYSQL_PASSWORD=hello_world
+      - PHP_MEMORY_LIMIT=1024M
+      - PHP_UPLOAD_LIMIT=10240M
     volumes:
       - /DATA/nextcloud/data:/var/www/html/data
       - /DATA/nextcloud/config:/var/www/html/config
@@ -21,3 +23,7 @@ networks:
   default:
     external:
       name: database
+
+
+
+
