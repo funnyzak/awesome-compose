@@ -1,58 +1,20 @@
 # Compose sample application
 
-## background cron
+## Background Cron
 
-https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/background_jobs_configuration.html
-
-```bash
-apt-get update
-
-apt install vim-common
-apt install cron-apt
-
-crontab -u www-data -e
-
-
-# cron
-*/5  *  *  *  * php -f /var/www/html/cron.php
-
-
-# test
-crontab -u www-data -l
-```
-
-## background systemd
-
-apt-get install systemd
-apt-get install systemctl 
+### Install Cron on localhost
 
 ```bash
-[Unit]
-Description=Nextcloud cron.php job
+# test exec cron
+docker exec -u www-data app-nextcloud php /var/www/html/cron.php
 
-[Service]
-User=www-data
-ExecStart=/usr/local/bin/php -f /var/www/html/cron.php
-KillMode=process
+# app cron 
+cron -e
+
+# append cron to crontab
+*/5 * * * * docker exec -u www-data app-nextcloud php /var/www/html/cron.php
+
+# test 
+cron -l
 ```
 
-```bash
-vi /etc/systemd/system/nextcloudcron.service
-```
-
-```bash
-[Unit]
-Description=Run Nextcloud cron.php every 5 minutes
-
-[Timer]
-OnBootSec=5min
-OnUnitActiveSec=5min
-Unit=nextcloudcron.service
-
-[Install]
-WantedBy=timers.target
-```
-
-```bash
-vi /etc/systemd/system/nextcloudcron.timer
-```
