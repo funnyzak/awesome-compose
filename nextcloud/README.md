@@ -2,6 +2,8 @@
 
 ## background install
 
+https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/background_jobs_configuration.html
+
 ```bash
 apt-get update
 
@@ -9,6 +11,12 @@ apt-get install systemd
 apt-get install systemctl 
 apt install vim-common
 apt install cron-apt
+
+crontab -u www-data -e
+
+*/5  *  *  *  * php -f /var/www/html/cron.php
+
+crontab -u www-data -l
 ```
 
 ```bash
