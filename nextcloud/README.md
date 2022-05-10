@@ -7,7 +7,8 @@ apt-get update
 
 apt-get install systemd
 apt-get install systemctl 
-apt install vim-command
+apt install vim-common
+apt install cron-apt
 ```
 
 ```bash
