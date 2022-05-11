@@ -1,0 +1,17 @@
+version: '3'
+services:
+  spug:
+    image: openspug/spug:3.1.2
+    privileged: true
+    container_name: app-spug
+    tty: true
+    restart: always
+    volumes:
+      - ./data/spug/:/data
+      - /var/run/docker.sock:/var/run/docker.sock 
+      - /usr/bin/docker:/usr/bin/docker 
+    networks:
+      - yycc
+networks:
+  yycc:
+    driver: bridge
