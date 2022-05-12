@@ -16,7 +16,8 @@ with ElashSearch7.
 - [`BarkServer`](https://github.com/funnyzak/awesome-compose/tree/master/bark) - Sample Bark Server application.
 - [`Flare`](https://github.com/funnyzak/awesome-compose/tree/master/flare) - Sample Flare Server application.
 - [`Portainer`](https://github.com/funnyzak/awesome-compose/tree/master/portainer) - Portainer Server application.
-- [`NextCloud`](https://github.com/funnyzak/awesome-compose/tree/master/nextcloud) - nextcloud Server application.
+- [`NextCloud`](https://github.com/funnyzak/awesome-compose/tree/master/nextcloud) - Nextcloud Server application.
+- [`Gofastdfs`](https://github.com/funnyzak/awesome-compose/tree/master/gofastdfs) - Go-fastdfs Server application.
 
 <!--lint disable awesome-toc-->
 
