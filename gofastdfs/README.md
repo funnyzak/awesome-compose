@@ -7,6 +7,7 @@ Project structure:
 ```text
 .
 ├── docker-compose.yaml
+├── fastdfsweb
 ```
 
 [_docker-compose.yml_](docker-compose.yml)
