@@ -1,0 +1,23 @@
+auth:
+  - user: leo
+    group: leo
+    uid: 1000
+    gid: 1000
+    password: sambapassword
+
+global:
+  - "force user = leo"
+  - "force group = leo"
+
+share:
+  - name: leo
+    path: /samba/leo
+    browsable: yes
+    writable: yes  
+    readonly: no
+    guestok: no
+    validusers: leo
+    writelist: leo
+    adminusers: leo
+    veto: no
+    hidefiles: /_*/

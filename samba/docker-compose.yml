@@ -1,0 +1,22 @@
+version: '3'
+services:
+  samba:
+    image: crazymax/samba:4.15.5
+    privileged: true
+    container_name: service-samba
+    logging:
+      driver: 'json-file'
+      options:
+        max-size: '1g'
+    tty: true
+    environment:
+      - TZ=Asia/Shanghai
+      - SAMBA_LOG_LEVEL=0
+    restart: always
+    volumes:
+      # Contains cache, configuration and runtime data
+      - "./samba/run:/data"
+      # share data
+      - "./data:/samba/leo"
+    ports:
+      - 10045:445

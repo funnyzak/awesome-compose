@@ -18,7 +18,7 @@ with ElashSearch7.
 - [`Portainer`](https://github.com/funnyzak/awesome-compose/tree/master/portainer) - Portainer Server application.
 - [`NextCloud`](https://github.com/funnyzak/awesome-compose/tree/master/nextcloud) - Nextcloud Server application.
 - [`Gofastdfs`](https://github.com/funnyzak/awesome-compose/tree/master/gofastdfs) - Go-fastdfs Server application.
-
+- [`Samba`](https://github.com/funnyzak/awesome-compose/tree/master/samba) - Go-fastdfs Server application.
 <!--lint disable awesome-toc-->
 
 
