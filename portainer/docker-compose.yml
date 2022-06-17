@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   portainer:
-    image: portainer/portainer-ce:2.13.0
+    image: portainer/portainer-ce:2.13.1
     privileged: true
     container_name: portainer
     tty: true
