@@ -1,6 +1,6 @@
 # Compose sample application
 
-## portainer application
+## transfer application
 
 Project structure:
 
@@ -14,61 +14,27 @@ Project structure:
 ```compose
 version: '3.8'
 services:
-  portainer:
-    image: portainer/portainer-ce:2.13.0
+  app:
+    image: dutchcoders/transfer.sh:latest
     privileged: true
-    container_name: portainer
+    container_name: transfersh
     tty: true
-    environment:
-      - TZ=Asia/Shanghai
-      - LANG=C.UTF-8
     restart: always
-    ports:
-      - 8000:8000 # portainer tcp
-      - 9000:9000 # portainer http ui
-      - 9443:9443 # portainer https ui
+    command: --basedir /tmp --provider local --log /tmp/transfer.log --listener :8080 --random-token-length 12 --purge-days	14 --purge-interval 1 --max-upload-size 10485760
     volumes:
-      - ./portainer_data:/data 
-      - /var/run/docker.sock:/var/run/docker.sock 
+      - ./data/transfersh:/tmp
+    ports:
+      - 80:8080
 ```
 
 ## Deploy with docker-compose
 
 ```compose
 $ docker-compose up -d
-Creating network "portainer_default" with the default driver
-Pulling app (portainer/portainer-ce:2.13.0)...
-2.13.0: Pulling from portainer/portainer-ce
-...
-Status: Downloaded newer image for portainer/portainer-ce:2.13.0
-Creating portainer ... done
 ```
 
-## Expected result
-
-Listing containers must show one container running and the port mapping as below:
-
-```bash
-$ docker ps
-CONTAINER ID        IMAGE                        COMMAND                  CREATED             STATUS              PORTS                  NAMES
-392kd893se3   portainer/portainer-ce:2.13.0            "portainer"                  About a minute ago   Up About a minute          0.0.0.0:8000->8000/tcp, :::9000->9000/tcp, :::9443->9443/tcp           portainer-server
-```
-
-After the application starts, navigate to `http://localhost:9000` in your web browser or run:
-
-```bash
-$  curl localhost:9000       
-<!doctype html>
-...</body></html>
-```
-
-Stop and remove the containers
-
-```compose
-$ docker-compose down
-```
+After the application starts, navigate to `http://localhost:80` in your web browser or run:
 
 ## Reference
 
-- [portainer docs](https://docs.portainer.io/v/ce-2.11/start/install/server/docker/linux)
-- [portainer image](https://hub.docker.com/r/portainer/portainer-ce)
+- [transfersh github](hhttps://github.com/dutchcoders/transfer.sh)

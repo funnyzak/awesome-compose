@@ -1,18 +1,13 @@
 version: '3.8'
 services:
-  portainer:
-    image: portainer/portainer-ce:2.13.1
+  app:
+    image: dutchcoders/transfer.sh:latest
     privileged: true
-    container_name: portainer
+    container_name: transfersh
     tty: true
-    environment:
-      - TZ=Asia/Shanghai
-      - LANG=C.UTF-8
     restart: always
-    ports:
-      - 8000:8000 # portainer tcp
-      - 9000:9000 # portainer http ui
-      - 9443:9443 # portainer https ui
+    command: --basedir /tmp --provider local --log /tmp/transfer.log --listener :8080 --random-token-length 12 --purge-days	14 --purge-interval 1 --max-upload-size 10485760
     volumes:
-      - ./portainer_data:/data 
-      - /var/run/docker.sock:/var/run/docker.sock 
+      - ./data/transfersh:/tmp
+    ports:
+      - 80:8080
