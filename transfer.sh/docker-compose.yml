@@ -6,7 +6,7 @@ services:
     container_name: transfersh
     tty: true
     restart: always
-    command: --basedir /tmp --provider local --log /tmp/transfer.log --listener :8080 --random-token-length 12 --purge-days	14 --purge-interval 1 --max-upload-size 10485760
+    command: --basedir /tmp --provider local --log /tmp/transfer.log --listener :8080 --random-token-length 7 --purge-days 7 --purge-interval 1 --max-upload-size 10485760
     volumes:
       - ./data/transfersh:/tmp
     ports:
