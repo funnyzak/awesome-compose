@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  portainer:
+    image: portainer/portainer-ce:2.13.1
+    privileged: true
+    container_name: portainer
+    tty: true
+    environment:
+      - TZ=Asia/Shanghai
+      - LANG=C.UTF-8
+    restart: always
+    ports:
+      - 8000:8000 # portainer tcp
+      - 9000:9000 # portainer http ui
+      - 9443:9443 # portainer https ui
+    volumes:
+      - ./portainer_data:/data 
+      - /var/run/docker.sock:/var/run/docker.sock 
