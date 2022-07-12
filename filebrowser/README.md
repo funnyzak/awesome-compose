@@ -65,6 +65,8 @@ CONTAINER ID        IMAGE                        COMMAND                  CREATE
 5802160ee153   filebrowser/filebrowser:s6   "/init"   4 minutes ago   Up 4 minutes (unhealthy)   80/tcp, 0.0.0.0:8080->8080/tcp, :::8080->8080/tcp   filebrowser
 ```
 
+Default Login: admin admin
+
 After the application starts, navigate to `http://localhost:8080` in your web browser or run:
 
 ```bash
