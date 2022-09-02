@@ -11,17 +11,17 @@ These samples provide a starting point for how to integrate different services u
 
 ## Samples of Docker Compose applications with multiple integrated services
 
-- [`SkyWalking`](https://github.com/funnyzak/awesome-compose/tree/master/skywalking-es) - Sample SkyWalking application
+- [`SkyWalking`](https://github.com/funnyzak/awesome-compose/tree/main/skywalking-es) - Sample SkyWalking application
 with ElashSearch7.
-- [`BarkServer`](https://github.com/funnyzak/awesome-compose/tree/master/bark) - Sample Bark Server application.
-- [`Flare`](https://github.com/funnyzak/awesome-compose/tree/master/flare) - Sample Flare Server application.
-- [`Portainer`](https://github.com/funnyzak/awesome-compose/tree/master/portainer) - Portainer Server application.
-- [`NextCloud`](https://github.com/funnyzak/awesome-compose/tree/master/nextcloud) - Nextcloud Server application.
-- [`Gofastdfs`](https://github.com/funnyzak/awesome-compose/tree/master/gofastdfs) - Go-fastdfs Server application.
-- [`Samba`](https://github.com/funnyzak/awesome-compose/tree/master/samba) - Go-fastdfs Server application.
-- [`FileBrowser`](https://github.com/funnyzak/awesome-compose/tree/master/filebrowser) - FileBrowser Server application.
-- [`Transfer`](https://github.com/funnyzak/awesome-compose/tree/master/transfer) - Easy and fast file sharing from the command-line.
-- [`SSCMS`](https://github.com/funnyzak/awesome-compose/tree/master/transfer) - cms system.
+- [`BarkServer`](https://github.com/funnyzak/awesome-compose/tree/main/bark) - Sample Bark Server application.
+- [`Flare`](https://github.com/funnyzak/awesome-compose/tree/main/flare) - Sample Flare Server application.
+- [`Portainer`](https://github.com/funnyzak/awesome-compose/tree/main/portainer) - Portainer Server application.
+- [`NextCloud`](https://github.com/funnyzak/awesome-compose/tree/main/nextcloud) - Nextcloud Server application.
+- [`Gofastdfs`](https://github.com/funnyzak/awesome-compose/tree/main/gofastdfs) - Go-fastdfs Server application.
+- [`Samba`](https://github.com/funnyzak/awesome-compose/tree/main/samba) - Go-fastdfs Server application.
+- [`FileBrowser`](https://github.com/funnyzak/awesome-compose/tree/main/filebrowser) - FileBrowser Server application.
+- [`Transfer`](https://github.com/funnyzak/awesome-compose/tree/main/transfer) - Easy and fast file sharing from the command-line.
+- [`SSCMS`](https://github.com/funnyzak/awesome-compose/tree/main/transfer) - cms system.
 
 
 <!--lint disable awesome-toc-->
