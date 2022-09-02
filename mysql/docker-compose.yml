@@ -3,15 +3,24 @@
 version: '3.1'
 services:
   mysql:
-    container_name: db-mysql
     image: mysql:8.0-oracle
-    command: --default-authentication-plugin=mysql_native_password
+    privileged: true
+    container_name: db-mysql
+    # command: --default-authentication-plugin=mysql_native_password
     restart: always
     volumes:
       - /SSD/db/mysql:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=7788689
+      - TZ=Asia/Shanghai
+      - LANG=C.UTF-8
       - character-set-server=utf8mb4 
       - collation-server=utf8mb4_unicode_ci
+      - MYSQL_ROOT_PASSWORD=7788689
+
+      # Optional
+      # - MYSQL_DATABASE=blog
+      # - MYSQL_USER=ublog
+      # - MYSQL_PASSWORD=7788689
+
     ports:
       - 3306:3306
