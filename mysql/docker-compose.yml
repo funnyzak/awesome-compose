@@ -8,22 +8,20 @@ services:
     container_name: db-mysql
     command: --default-authentication-plugin=mysql_native_password --general-log=1 --general-log-file=/var/lib/mysql/general-log.log
     restart: always
+    environment:
+      TZ: Asia/Shanghai
+      LANG: C.UTF-8
+      CHARACTER_SET_SERVER: utf8mb4
+      COLLATION_SERVER: utf8mb4_unicode_ci
+      MYSQL_ROOT_PASSWORD: 7788689
+      # Optional
+      # MYSQL_DATABASE: blog
+      # MYSQL_USER: ublog
+      # MYSQL_PASSWORD: 7788689
     volumes:
       # db data、binlog、general log
       - ./mysql/lib:/var/lib/mysql
       # mysql config
       - ./mysql/etc:/etc/mysql
-    environment:
-      - TZ=Asia/Shanghai
-      - LANG=C.UTF-8
-      - character-set-server=utf8mb4 
-      - collation-server=utf8mb4_unicode_ci
-      - MYSQL_ROOT_PASSWORD=7788689
-
-      # Optional
-      # - MYSQL_DATABASE=blog
-      # - MYSQL_USER=ublog
-      # - MYSQL_PASSWORD=7788689
-
     ports:
       - 3306:3306
