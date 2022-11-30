@@ -5,29 +5,31 @@
 These samples provide a starting point for how to integrate different services using a Compose file and to manage their deployment with Docker Compose.
 
 <!--lint disable awesome-toc-->
+
 ## Contents
 
 - [Samples of Docker Compose applications with multiple integrated services](#samples-of-docker-compose-applications-with-multiple-integrated-services).
 
 ## Samples of Docker Compose applications with multiple integrated services
 
-- [`SkyWalking`](https://github.com/funnyzak/awesome-compose/tree/main/skywalking-es) - Sample SkyWalking application
-with ElashSearch7.
-- [`BarkServer`](https://github.com/funnyzak/awesome-compose/tree/main/bark) - Sample Bark Server application.
-- [`Flare`](https://github.com/funnyzak/awesome-compose/tree/main/flare) - Sample Flare Server application.
-- [`Portainer`](https://github.com/funnyzak/awesome-compose/tree/main/portainer) - Portainer Server application.
-- [`NextCloud`](https://github.com/funnyzak/awesome-compose/tree/main/nextcloud) - Nextcloud Server application.
-- [`Gofastdfs`](https://github.com/funnyzak/awesome-compose/tree/main/gofastdfs) - Go-fastdfs Server application.
-- [`Samba`](https://github.com/funnyzak/awesome-compose/tree/main/samba) - Go-fastdfs Server application.
-- [`FileBrowser`](https://github.com/funnyzak/awesome-compose/tree/main/filebrowser) - FileBrowser Server application.
-- [`Transfer`](https://github.com/funnyzak/awesome-compose/tree/main/transfer) - Easy and fast file sharing from the command-line.
-- [`SSCMS`](https://github.com/funnyzak/awesome-compose/tree/main/transfer) - cms system.
+- [`SkyWalking`](https://github.com/ycrun/awesome-compose/tree/main/skywalking-es) - Sample SkyWalking application
+  with ElashSearch7.
+- [`BarkServer`](https://github.com/ycrun/awesome-compose/tree/main/bark) - Sample Bark Server application.
+- [`Flare`](https://github.com/ycrun/awesome-compose/tree/main/flare) - Sample Flare Server application.
+- [`Portainer`](https://github.com/ycrun/awesome-compose/tree/main/portainer) - Portainer Server application.
+- [`NextCloud`](https://github.com/ycrun/awesome-compose/tree/main/nextcloud) - Nextcloud Server application.
+- [`Gofastdfs`](https://github.com/ycrun/awesome-compose/tree/main/gofastdfs) - Go-fastdfs Server application.
+- [`Samba`](https://github.com/ycrun/awesome-compose/tree/main/samba) - Go-fastdfs Server application.
+- [`FileBrowser`](https://github.com/ycrun/awesome-compose/tree/main/filebrowser) - FileBrowser Server application.
+- [`Transfer`](https://github.com/ycrun/awesome-compose/tree/main/transfer) - Easy and fast file sharing from the command-line.
+- [`SSCMS`](https://github.com/ycrun/awesome-compose/tree/main/transfer) - cms system.
+- [`Mysql`](https://github.com/ycrun/awesome-compose/tree/main/mysql) - Mysql Server application.
+- [`Spug`](https://github.com/ycrun/awesome-compose/tree/main/spug) - Spug Server application.
 
+<!--lint disable awesome-toc-->
 
 <!--lint disable awesome-toc-->
 
-
-<!--lint disable awesome-toc-->
 ## Getting started
 
 These instructions will get you through the bootstrap phase of creating and
@@ -59,16 +61,15 @@ To stop and remove all containers of the sample application run:
 ```console
 docker-compose down
 ```
+
 <!--lint disable awesome-toc-->
 
 ## Contribute
 
-<a href="https://github.com/funnyzak/awesome-compose/graphs/contributors">
+<a href="https://github.com/ycrun/awesome-compose/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=funnyzak/awesome-compose" />
 </a>
 
-
-
 ## License
 
-MIT License © 2022 [funnyzak](https://github.com/funnyzak)
+MIT License © 2022 [funnyzak](https://github.com/ycrun/awesome-compose)
