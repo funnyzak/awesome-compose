@@ -70,6 +70,13 @@ docker-compose down
   <img src="https://contrib.rocks/image?repo=funnyzak/awesome-compose" />
 </a>
 
+## References
+
+- [Docker](https://docs.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
+- [Docker Compose file reference](https://docs.docker.com/compose/compose-file/)
+- [Docker Compose command line reference](https://docs.docker.com/compose/reference/)
+
 ## License
 
 MIT License © 2022 [funnyzak](https://github.com/ycrun/awesome-compose)
