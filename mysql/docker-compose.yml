@@ -33,6 +33,6 @@ services:
       # MYSQL_PASSWORD: 7788689
     volumes:
       # db data、binlog、general log
-      - ./mysql/lib/mysql:/var/lib/mysql
+      - ./db/mysql:/var/lib/mysql
     ports:
       - 3306:3306
