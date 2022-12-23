@@ -4,7 +4,7 @@ version: '3.1'
 services:
   mysql:
     image: mysql:5.7.39
-    privileged: true
+    privileged: false
     container_name: db-mysql
     command: 
       # bin log
