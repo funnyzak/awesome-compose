@@ -1,3 +1,17 @@
+# Compose sample application
+
+## MySQL application
+
+Project structure:
+
+```text
+.
+├── docker-compose.yaml
+```
+
+[_docker-compose.yml_](docker-compose.yml)
+
+```compose
  # author: leon<silenceace@gmail.com>
  # https://hub.docker.com/_/mysql?tab=description
 version: '3.1'
@@ -36,3 +50,8 @@ services:
       - ./db/mysql:/var/lib/mysql
     ports:
       - 3306:3306
+```
+
+## Reference
+
+- [images](https://hub.docker.com/_/mysql/)
