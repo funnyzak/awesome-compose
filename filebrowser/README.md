@@ -5,7 +5,6 @@
 Project structure:
 
 ```text
-.
 ├── docker-compose.yml
 ├── filebrowser.db
 └── settings.json

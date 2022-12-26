@@ -5,7 +5,6 @@
 Project structure:
 
 ```text
-.
 ├── docker-compose.yaml
 ```
 
