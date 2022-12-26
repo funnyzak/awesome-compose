@@ -10,10 +10,9 @@ Project structure:
 ├── config.php
 ```
 
-
 [_docker-compose.yml_](docker-compose.yml)
 
-```compose
+```yaml
 # author: leon<silenceace@gmail.com>
 version: '3.1'
 services:

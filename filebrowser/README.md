@@ -13,7 +13,7 @@ Project structure:
 
 [_docker-compose.yml_](docker-compose.yml)
 
-```compose
+```yaml
 version: '3.3'
 services:
   filebrowser:

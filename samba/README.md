@@ -5,14 +5,13 @@
 Project structure:
 
 ```text
-.
 ├── docker-compose.yaml
 |-- samba
 ```
 
 [_docker-compose.yml_](docker-compose.yml)
 
-```compose
+```yaml
 version: '3'
 services:
   samba:

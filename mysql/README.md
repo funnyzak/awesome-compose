@@ -11,7 +11,7 @@ Project structure:
 
 [_docker-compose.yml_](docker-compose.yml)
 
-```compose
+```yaml
  # author: leon<silenceace@gmail.com>
  # https://hub.docker.com/_/mysql?tab=description
 version: '3.1'

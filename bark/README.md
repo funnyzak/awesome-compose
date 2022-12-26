@@ -12,7 +12,7 @@ Project structure:
 
 [_docker-compose.yml_](docker-compose.yml)
 
-```compose
+```yaml
 version: '3.8'
 services:
   bark-server:

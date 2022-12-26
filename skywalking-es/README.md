@@ -4,7 +4,7 @@
 
 [_docker-compose.yml_](docker-compose.yml)
 
-```
+```yaml
 version: '3'
 services:
   skywalking-oap:
