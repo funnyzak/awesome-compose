@@ -20,12 +20,14 @@ services:
     privileged: false
     container_name: db-mysql
     command: 
-      # bin log
+      # https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html
       --server_id=308
       --log-bin=/var/lib/mysql/mysql-bin
       --sync_binlog=1
       --binlog-ignore-db=mysql
       --binlog_format=ROW
+      # This variable applies when binary logging is enabled. It controls whether stored function creators can be trusted not to create stored functions that causes unsafe events to be written to the binary log. If set to 0 (the default), users are not permitted to create or alter stored functions unless they have the SUPER privilege in addition to the CREATE ROUTINE or ALTER ROUTINE privilege. A setting of 0 also enforces the restriction that a function must be declared with the DETERMINISTIC characteristic, or with the READS SQL DATA or NO SQL characteristic. If the variable is set to 1, MySQL does not enforce these restrictions on stored function creation. This variable also applies to trigger creation. 
+      --log_bin_trust_function_creators=1
       --expire_logs_days=7
       --general-log=1
       --general-log-file=/var/lib/mysql/general-log
