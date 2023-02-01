@@ -1,15 +1,39 @@
 version: '3'
 services:
   spug:
-    image: openspug/spug:3.1.2
-    privileged: true
-    container_name: app-spug
+    image: openspug/spug-service
+    privileged: false
+    container_name: spug-app
     tty: true
-    restart: always
+    restart: on-failure
+    environment:
+      - MYSQL_DATABASE=spug
+      - MYSQL_USER=spug
+      - MYSQL_PASSWORD=spug.cc
+      - MYSQL_HOST=db
+      - MYSQL_PORT=3306
     volumes:
-      - ./data/spug/:/data
+      - ./data/spug/:/data/spug
       - /var/run/docker.sock:/var/run/docker.sock 
       - /usr/bin/docker:/usr/bin/docker 
+    ports:
+      - 80:80
+    depends_on:
+      - db
+    networks:
+      - yycc
+  db:
+    image: mariadb:10.8.2
+    container_name: spug-db
+    restart: always
+    command: --port 3306 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - /data/spug/mysql:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=spug
+      - MYSQL_USER=spug
+      - MYSQL_PASSWORD=spug.cc
+      - MYSQL_ROOT_PASSWORD=spug.cc
     networks:
       - yycc
 networks:
