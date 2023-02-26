@@ -4,20 +4,25 @@ services:
   # reference: https://docs.docker.com/nextcloud/docker-install/
   app:
     container_name: nc-app
-    image: nextcloud:24.0.0-apache
+    image: nextcloud:25.0.4-apache
     privileged: true
     environment:
       - MYSQL_HOST=mysql
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=u_nc
-      - MYSQL_PASSWORD=zmf.qzb0MFB*yna-qht
+      - MYSQL_PASSWORD=your_mysql_password
       - PHP_MEMORY_LIMIT=3072M
       - PHP_UPLOAD_LIMIT=10240M
+      # - REDIS_HOST=redis
+      # - REDIS_HOST_PASSWORD=redis_password_here
+      # - REDIS_HOST_PORT=6379
     volumes:
-      - ./nextcloud/data:/var/www/html/data
-      - ./nextcloud/config:/var/www/html/config
-      - ./nextcloud/apps:/var/www/html/apps
-      - ./nextcloud/themes:/var/www/html/themes
+      #  You must mount a volume for the data directory to a persistent location on your host so that it isn't lost when the container is removed.
+      - ./nextcloud/html/data:/var/www/html/data
+      - ./nextcloud/html/config:/var/www/html/config
+      - ./nextcloud/html/apps:/var/www/html/apps
+      - ./nextcloud/html/custom_apps:/var/www/html/custom_apps
+      - ./nextcloud/html/themes:/var/www/html/themes
     depends_on:
       - mysql
       - redis
@@ -37,7 +42,7 @@ services:
       - MYSQL_ROOT_PASSWORD=pwa_MFP0dpr2gex0gqu
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=u_nc
-      - MYSQL_PASSWORD=zmf.qzb0MFB*yna-qht
+      - MYSQL_PASSWORD=your_mysql_password
       - character-set-server=utf8mb4 
       - collation-server=utf8mb4_unicode_ci
     networks:
@@ -72,7 +77,7 @@ services:
     image: redis:6.0.8
     privileged: true
     container_name: nc-redis
-    command: redis-server --requirepass zpb4htz4vem_hkb0HQJ
+    command: redis-server --requirepass redis_password_here
     volumes:
       - ./db/redis-data:/data
     restart: always
