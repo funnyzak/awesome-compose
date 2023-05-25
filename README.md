@@ -26,6 +26,7 @@ These samples provide a starting point for how to integrate different services u
 - [`Mysql`](https://github.com/ycrun/awesome-compose/tree/main/mysql) - Mysql Server application.
 - [`Spug`](https://github.com/ycrun/awesome-compose/tree/main/spug) - Spug Server application.
 - [`Redis`](https://github.com/ycrun/awesome-compose/tree/main/redis) - Redis Server application.
+- [`Superset`](https://github.com/ycrun/awesome-compose/tree/main/super-set) - Superset Server application.
 
 <!--lint disable awesome-toc-->
 
