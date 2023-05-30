@@ -1,0 +1,23 @@
+ # author: leon<silenceace@gmail.com>
+version: '3.1'
+services:
+  metabase:
+    image: metabase/metabase:v0.46.4
+    container_name: app-metabase
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1g"
+    environment:
+      - MB_DB_FILE=/db/metabase.db
+    tty: true
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    volumes:
+      - ./data/metabase.db:/db/metabase.db
+    networks:
+      - ycnet
+networks:
+  ycnet:
+    driver: bridge

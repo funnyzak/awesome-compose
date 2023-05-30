@@ -1,0 +1,42 @@
+ # author: leon<silenceace@gmail.com>
+version: '3.1'
+services:
+  metabase:
+    image: metabase/metabase:v0.46.4
+    container_name: app-metabase
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1g"
+    environment:
+      - MB_DB_TYPE=mysql
+      - MB_DB_DBNAME=metabase
+      - MB_DB_PORT=3306
+      - MB_DB_USER=umetabase
+      - MB_DB_PASS=31234567890
+      - MB_DB_HOST=mysql
+    tty: true
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    networks:
+      - ycnet
+  mysql:
+    container_name: app-mysql
+    image: mysql:5.7.27
+    command: --default-authentication-plugin=mysql_native_password
+    restart: unless-stopped
+    volumes:
+      - ./db/mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=31234567890helloworld
+      - MYSQL_DATABASE=metabase
+      - MYSQL_USER=umetabase
+      - MYSQL_PASSWORD=31234567890
+      - character-set-server=utf8mb4 
+      - collation-server=utf8mb4_unicode_ci
+    networks:
+      - ycnet
+networks:
+  ycnet:
+    driver: bridge
