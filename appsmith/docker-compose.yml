@@ -1,0 +1,16 @@
+version: '3'
+services:
+  appsmith:
+    image: appsmith/appsmith-ce:v1.9.20.4
+    container_name: app-appsmith
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./data/appsmith/stacks:/appsmith-stacks
+    restart: unless-stopped
+    networks:
+      - yycc
+networks:
+  yycc:
+    driver: bridge

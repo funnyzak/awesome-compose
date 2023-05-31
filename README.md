@@ -29,6 +29,7 @@ These samples provide a starting point for how to integrate different services u
 - [`Superset`](https://github.com/ycrun/awesome-compose/tree/main/super-set) - Superset Server application.
 - [`Postgres`](https://github.com/ycrun/awesome-compose/tree/main/postgres) - Postgres Server application.
 - [`metabase`](https://github.com/ycrun/awesome-compose/tree/main/metabase) - Metabase Server application.
+- [`AppSmith`](https://github.com/ycrun/awesome-compose/tree/main/appsimith) - AppSmith Server application.
 
 <!--lint disable awesome-toc-->
 
