@@ -30,6 +30,7 @@ These samples provide a starting point for how to integrate different services u
 - [`Postgres`](https://github.com/ycrun/awesome-compose/tree/main/postgres) - Postgres Server application.
 - [`metabase`](https://github.com/ycrun/awesome-compose/tree/main/metabase) - Metabase Server application.
 - [`AppSmith`](https://github.com/ycrun/awesome-compose/tree/main/appsimith) - AppSmith Server application.
+- [`tooljet`](https://github.com/ycrun/awesome-compose/tree/main/tooljet) - Tooljet Server application, tooljet is a low code platform for building internal tools.
 
 <!--lint disable awesome-toc-->
 

@@ -1,0 +1,36 @@
+ # author: leon<silenceace@gmail.com>
+version: '3.1'
+services:
+  postgres:
+    image: postgres:13.11
+    restart: unless-stopped
+    container_name: app-postgres
+    environment:
+      POSTGRES_USER: padm
+      POSTGRES_PASSWORD: 1234567890
+      POSTGRES_INITDB_ARGS: --data-checksums
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ./data/postgresql:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    networks:
+      - ycnet
+  tooljet:
+    image: tooljet/tooljet-ce:v2.6.2
+    container_name: app-tooljet
+    stdin_open: true
+    tty: true
+    env_file: .env.prod
+    environment:
+      SERVE_CLIENT: "true"
+      PORT: "80"
+    command: npm run start:prod
+    ports:
+      - 81:80
+    restart: unless-stopped
+    networks:
+      - ycnet
+networks:
+  ycnet:
+    driver: bridge
