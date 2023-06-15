@@ -15,13 +15,15 @@ services:
       - POSTGRE_PORT=5432
       - POSTGRE_USER=upostgres
       - POSTGRE_PASSWORD=1234567890
-      - LABEL_STUDIO_HOST=${LABEL_STUDIO_HOST:-}
+      # If you want multiple people to collaborate on a project, you might want to run Label Studio with an external domain name. 
+      - LABEL_STUDIO_HOST=https://your.domain.com:8081
+      - LABEL_STUDIO_PORT=8080
       - JSON_LOG=1
       - LOG_LEVEL=INFO
     volumes:
       - ./data/labelstudio:/label-studio/data:rw
     ports:
-      - 8080:8000
+      - 8081:8000
     depends_on:
       - postgres
     networks:
