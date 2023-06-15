@@ -14,7 +14,7 @@ Project structure:
 version: '3.8'
 services:
   postgres:
-    image: postgres:13.11
+    image: postgres:15.3
     restart: unless-stopped
     container_name: app-postgres
     environment:
