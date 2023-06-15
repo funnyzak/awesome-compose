@@ -17,6 +17,8 @@ services:
       - POSTGRE_PASSWORD=1234567890
       # If you want multiple people to collaborate on a project, you might want to run Label Studio with an external domain name. 
       - LABEL_STUDIO_HOST=https://your.domain.com:8081
+      # If you want disable signup without link you can set this variable to true
+      - LABEL_STUDIO_DISABLE_SIGNUP_WITHOUT_LINK=false
       - LABEL_STUDIO_PORT=8080
       - JSON_LOG=1
       - LOG_LEVEL=INFO
