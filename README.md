@@ -31,6 +31,7 @@ These samples provide a starting point for how to integrate different services u
 - [`metabase`](https://github.com/ycrun/awesome-compose/tree/main/metabase) - Metabase Server application.
 - [`AppSmith`](https://github.com/ycrun/awesome-compose/tree/main/appsimith) - AppSmith Server application.
 - [`tooljet`](https://github.com/ycrun/awesome-compose/tree/main/tooljet) - Tooljet Server application, tooljet is a low code platform for building internal tools.
+- [`label-studio`](https://github.com/ycrun/awesome-compose/tree/main/label-studio) - LabelStudio Server application, Label Studio is a multi-type data labeling and annotation tool with standardized output format.
 
 <!--lint disable awesome-toc-->
 

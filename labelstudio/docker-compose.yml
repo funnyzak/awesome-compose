@@ -1,0 +1,47 @@
+ # author: leon<silenceace@gmail.com>
+version: '3.1'
+services:
+  labelstudio:
+    stdin_open: true
+    tty: true
+    image: heartexlabs/label-studio:latest
+    container_name: app-labelstudio
+    restart: unless-stopped
+    command: label-studio-uwsgi
+    environment:
+      - DJANGO_DB=default
+      - POSTGRE_NAME=labelstudio # database name
+      - POSTGRE_HOST=postgres
+      - POSTGRE_PORT=5432
+      - POSTGRE_USER=upostgres
+      - POSTGRE_PASSWORD=1234567890
+      - LABEL_STUDIO_HOST=${LABEL_STUDIO_HOST:-}
+      - JSON_LOG=1
+      - LOG_LEVEL=INFO
+    volumes:
+      - ./data/labelstudio:/label-studio/data:rw
+    ports:
+      - 8080:8000
+    depends_on:
+      - postgres
+    networks:
+      - ycnet
+  postgres:
+    image: postgres:15.3
+    restart: unless-stopped
+    container_name: app-postgres
+    environment:
+      POSTGRES_DB: labelstudio
+      POSTGRES_USER: upostgres
+      POSTGRES_PASSWORD: 1234567890
+      POSTGRES_INITDB_ARGS: --data-checksums
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ./data/postgresql:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    networks:
+      - ycnet
+networks:
+  ycnet:
+    driver: bridge
