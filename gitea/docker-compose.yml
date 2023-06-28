@@ -1,0 +1,43 @@
+ # author: leon<silenceace@gmail.com>
+version: '3.1'
+services:
+  server:
+    image: gitea/gitea:1.20-nightly
+    container_name: app-gitea
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - GITEA__database__DB_TYPE=mysql
+      - GITEA__database__HOST=mysql:3306
+      - GITEA__database__NAME=gitea
+      - GITEA__database__USER=ugitea
+      - GITEA__database__PASSWD=31234567890
+    restart: unless-stopped
+    networks:
+      - gitea
+    volumes:
+      - ./gitea:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "80:3000"
+      - "8001:22"
+  mysql:
+    container_name: app-mysql
+    image: mysql:5.7.27
+    command: --default-authentication-plugin=mysql_native_password
+    restart: unless-stopped
+    volumes:
+      - ./db/mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=31234567890helloworld
+      - MYSQL_DATABASE=gitea
+      - MYSQL_USER=ugitea
+      - MYSQL_PASSWORD=31234567890
+      - character-set-server=utf8mb4 
+      - collation-server=utf8mb4_unicode_ci
+    networks:
+      - ycnet
+networks:
+  ycnet:
+    driver: bridge

@@ -32,6 +32,7 @@ These samples provide a starting point for how to integrate different services u
 - [`AppSmith`](https://github.com/ycrun/awesome-compose/tree/main/appsimith) - AppSmith Server application.
 - [`tooljet`](https://github.com/ycrun/awesome-compose/tree/main/tooljet) - Tooljet Server application, tooljet is a low code platform for building internal tools.
 - [`label-studio`](https://github.com/ycrun/awesome-compose/tree/main/label-studio) - LabelStudio Server application, Label Studio is a multi-type data labeling and annotation tool with standardized output format.
+- [`gitea`](https://gitea.io/en-us/) - Gitea is a painless self-hosted Git service. It is similar to GitHub, Bitbucket, and GitLab.
 
 <!--lint disable awesome-toc-->
 
