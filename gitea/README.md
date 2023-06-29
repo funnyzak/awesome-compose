@@ -13,3 +13,4 @@ Use `docker-compose.yaml` to use mysql database.
 ## References
 
 - [Gitea](https://gitea.io/en-us/)
+- [SSH Container Passthrough](https://docs.gitea.com/next/installation/install-with-docker#ssh-container-passthrough)
