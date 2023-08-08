@@ -2,7 +2,7 @@
 version: '3.1'
 services:
   metabase:
-    image: metabase/metabase:v0.46.4
+    image: metabase/metabase:v0.46.6.4
     container_name: app-metabase
     logging:
       driver: "json-file"
