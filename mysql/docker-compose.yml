@@ -9,6 +9,7 @@ services:
     command: 
       # bin log
       --server_id=308
+      --max-allowed-packet=67108864
       --log-bin=/var/lib/mysql/mysql-bin
       --sync_binlog=1
       --binlog-ignore-db=mysql
