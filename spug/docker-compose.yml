@@ -1,8 +1,10 @@
 version: '3'
+
+name: spug
+
 services:
   spug:
     image: openspug/spug-service
-    privileged: false
     container_name: spug-app
     tty: true
     restart: on-failure
