@@ -7,15 +7,12 @@ services:
     tty: true
     restart: on-failure
     environment:
+      - SPUG_DOCKER_VERSION=v3.2.7
       - MYSQL_DATABASE=spug
       - MYSQL_USER=spug
       - MYSQL_PASSWORD=spug.cc
       - MYSQL_HOST=db
       - MYSQL_PORT=3306
-    volumes:
-      - ./data/spug/:/data/spug
-      - /var/run/docker.sock:/var/run/docker.sock 
-      - /usr/bin/docker:/usr/bin/docker 
     ports:
       - 80:80
     depends_on:
