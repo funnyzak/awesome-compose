@@ -1,0 +1,23 @@
+ # author: leon<silenceace@gmail.com>
+version: '3.1'
+name: minio
+services:
+  minio:
+    image: minio/minio
+    container_name: app-minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: xW8clQl4m6
+      MINIO_ROOT_PASSWORD: Gdr0Q8C6LJSNzQOBswJ58hDu
+      MINIO_BROWSER: "on"
+    volumes:
+      - ./minio/data:/data
+      - ./minio/config:/root/.minio
+    command: server /data --console-address ":9001" --address ":9000"
+    networks:
+      - ycnet
+networks:
+  ycnet:
+    driver: bridge
