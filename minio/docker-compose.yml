@@ -6,12 +6,16 @@ services:
     image: minio/minio
     container_name: app-minio
     ports:
-      - "9000:9000"
-      - "9001:9001"
+      - "9000:9000" # Minio Server
+      - "9001:9001" # Minio Console UI
     environment:
       MINIO_ROOT_USER: xW8clQl4m6
       MINIO_ROOT_PASSWORD: Gdr0Q8C6LJSNzQOBswJ58hDu
-      MINIO_BROWSER: "on"
+      MINIO_BROWSER: "on" # Enable UI
+      MINIO_BROWSER_REDIRECT: "false" # Disable redirect to UI
+      MINIO_SERVER_URL: "https://yourserver.com" # Server URL
+      MINIO_BROWSER_REDIRECT_URL: "https://yourserver.com/minio/ui" # The externally resolvable hostname for the MinIO Console used by the configured external identity manager for returning the authentication response.
+      MINIO_BROWSER_SESSION_DURATION: "1h" # Session duration
     volumes:
       - ./minio/data:/data
       - ./minio/config:/root/.minio
