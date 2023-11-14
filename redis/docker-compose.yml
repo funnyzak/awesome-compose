@@ -1,0 +1,29 @@
+  # author: leon<silenceace@gmail.com>
+version: '3.1'
+
+name: redis
+
+services:
+  redis:
+    image: redis:7.2.3
+    privileged: false
+    container_name: app-redis
+    command: redis-server --requirepass redis_password_here
+    volumes:
+      - ./db/redis-data:/data
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+      - REDIS_REPLICATION_MODE=master
+    ports:
+      - 6379:6379
+    healthcheck:
+        test: ["CMD", "redis-cli", "ping"]
+        interval: 10s
+        timeout: 5s
+        retries: 3
+    networks:
+      - yc
+networks:
+  yc:
+    external: true
