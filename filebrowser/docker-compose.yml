@@ -4,14 +4,20 @@ services:
     image: filebrowser/filebrowser:s6
     container_name: filebrowser
     restart: always
-    privileged: true
     tty: true
-    volumes:
-      - ./fb_files:/srv
-      - ./filebrowser.db:/database/filebrowser.db
-      - ./settings.json:/config/settings.json
     environment:
-      - PUID=$$(id -u)
-      - PGID=$$(id -g)
+      - TZ=Asia/Shanghai
+      - LANG=C.UTF-8
+      - PUID=$(id -u)
+      - PGID=$(id -g)
+      # - FB_BASEURL=/filebrowser # Base URL
+      # - FB_USERNAME=admin # Default admin username
+      # - FB_PORT=80 # Port for Filebrowser to listen on
+      # - FB_ADDRESS=0.0.0.0 # Address for Filebrowser to listen on
+      # - FB_ROOT=/srv # Root directory to serve
+    volumes:
+      - ./fb_files:/srv # Filebrowser files
+      - ./filebrowser/filebrowser.json:/.filebrowser.json # Filebrowser settings 
+      - ./filebrowser/filebrowser.db:/database.db # Filebrowser database
     ports:
-      - 8080:8080
+      - 8080:80 # Filebrowser port

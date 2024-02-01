@@ -10,37 +10,15 @@ Project structure:
 └── settings.json
 ```
 
-[_docker-compose.yml_](docker-compose.yml)
-
-```yaml
-version: '3.3'
-services:
-  filebrowser:
-    image: filebrowser/filebrowser:s6
-    container_name: filebrowser
-    restart: always
-    privileged: true
-    tty: true
-    volumes:
-      - ./fb_files:/srv
-      - ./filebrowser.db:/database/filebrowser.db
-      - ./settings.json:/config/settings.json
-    environment:
-      - PUID=$$(id -u)
-      - PGID=$$(id -g)
-    ports:
-      - 8080:8080
-```
-
 [_settings.json_](settings.json)
 
 ```json
 {
-  "port": 8080,
+  "port": 80,
   "baseURL": "",
   "address": "0.0.0.0",
   "log": "stdout",
-  "database": "/database/filebrowser.db",
+  "database": "/database.db",
   "root": "/srv"
 }
 ```
