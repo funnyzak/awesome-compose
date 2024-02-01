@@ -1,0 +1,14 @@
+version: '3.1'
+services:
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:5.2.1
+    container_name: app-phpmyadmin
+    restart: always
+    privileged: true
+    environment:
+      - TZ=Asia/Shanghai
+      - PMA_HOST=your_mysql_host
+      - PMA_PORT=3306
+      - PMA_ABSOLUTE_URI=https://your.domain.com/phpmyadmin/
+    ports:
+      - 1000:80
