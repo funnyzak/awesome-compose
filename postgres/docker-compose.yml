@@ -1,11 +1,11 @@
 version: '3.8'
 services:
   postgres:
-    image: postgres:15.3
+    image: postgres:16.2
     restart: unless-stopped
     container_name: app-postgres
     environment:
-      POSTGRES_USER: pgadmin
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: ksdfjwj3429kjssd
       POSTGRES_INITDB_ARGS: --data-checksums
       PGDATA: /var/lib/postgresql/data/pgdata
