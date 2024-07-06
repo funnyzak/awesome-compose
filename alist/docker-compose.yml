@@ -4,6 +4,8 @@ services:
     restart: always
     volumes:
       - './etc/alist:/opt/alist/data'
+      # you can also use a bind mount to store the data outside the container
+      - './alist_data:/ldata'
     ports:
       - '5244:5244'
       - '5245:5245'
@@ -13,4 +15,4 @@ services:
       - UMASK=022
       - TZ=UTC
     container_name: alist
-    image: 'xhofe/alist:latest'
+    image: 'xhofe/alist:v3.35.0-ffmpeg'
