@@ -1,0 +1,52 @@
+ # author: leon<silenceace@gmail.com>
+version: '3.1'
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.0.0
+    container_name: app-keycloak
+    command: start-dev
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+    environment:
+      KC_LOG_LEVEL: debug
+      KC_HTTP_ENABLED: true
+      HTTP_ADDRESS_FORWARDING: true
+      KC_HOSTNAME: ${KC_HOSTNAME:-keycloak.ffneo.com}
+      KC_HOSTNAME_PORT: 8080
+      KC_HOSTNAME_STRICT_BACKCHANNEL: false
+      KC_HOSTNAME_STRICT_HTTPS: true
+      KC_HEALTH_ENABLED: true
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: hellokeycloak
+      KC_DB: postgres
+      KC_DB_SCHEMA: public
+      KC_DB_URL: jdbc:postgresql://postgres/keycloak
+      KC_DB_USERNAME: upostgres
+      KC_DB_PASSWORD: 1234567890
+    ports:
+      - 8080:8000
+    depends_on:
+      - postgres
+    networks:
+      - ycnet
+  postgres:
+    image: postgres:15.3
+    restart: unless-stopped
+    container_name: app-postgres
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: upostgres
+      POSTGRES_PASSWORD: 1234567890
+      POSTGRES_INITDB_ARGS: --data-checksums
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ./data/postgresql:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    networks:
+      - ycnet
+networks:
+  ycnet:
+    driver: bridge
