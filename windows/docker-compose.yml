@@ -4,11 +4,15 @@ services:
     container_name: windows
     environment:
       VERSION: "11"
+      CPU_CORES: "8"
+      DISK_SIZE: "256G"
+      DISK2_SIZE: "512G"
+      RAM_SIZE: "16G"
       LANGUAGE: "Chinese"
       REGION: "en-US"
       KEYBOARD: "en-US"
       USERNAME: "leo"
-      PASSWORD: "yxqfiwhrclrslamo"
+      PASSWORD: "ztlakycblek"
     devices:
       - /dev/kvm
     cap_add:
@@ -16,6 +20,7 @@ services:
     volumes:
       - ./share_data:/data
       - ./storage:/storage
+      - ./storage2:/storage2
     ports:
       - 8006:8006
       - 3389:3389/tcp
