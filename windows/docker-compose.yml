@@ -7,6 +7,8 @@ services:
       LANGUAGE: "Chinese"
       REGION: "en-US"
       KEYBOARD: "en-US"
+      USERNAME: "leo"
+      PASSWORD: "yxqfiwhrclrslamo"
     devices:
       - /dev/kvm
     cap_add:
