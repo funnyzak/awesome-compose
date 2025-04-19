@@ -13,7 +13,6 @@ Project structure:
 ```yaml
  # author: leon<silenceace@gmail.com>
  # https://hub.docker.com/_/mysql?tab=description
-version: '3.1'
 services:
   mysql:
     image: mysql:5.7.40

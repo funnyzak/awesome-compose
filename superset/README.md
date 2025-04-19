@@ -13,7 +13,6 @@ Project structure:
 ```yaml
  # author: leon<silenceace@gmail.com>
  # https://hub.docker.com/r/apache/superset
-version: '3.1'
 services:
   superset:
     image: apache/superset

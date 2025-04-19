@@ -1,5 +1,4 @@
  # author: leon<silenceace@gmail.com>
-version: '3.1'
 services:
   labelstudio:
     stdin_open: true

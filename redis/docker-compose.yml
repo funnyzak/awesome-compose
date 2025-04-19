@@ -1,11 +1,10 @@
   # author: leon<silenceace@gmail.com>
-version: '3.1'
 
 name: redis
 
 services:
   redis:
-    image: redis:7.2.3
+    image: redis:7.4.2
     privileged: false
     container_name: app-redis
     command: redis-server --requirepass redis_password_here
@@ -26,4 +25,4 @@ services:
       - yc
 networks:
   yc:
-    external: true
+    driver: bridge

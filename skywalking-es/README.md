@@ -5,7 +5,7 @@
 [_docker-compose.yml_](docker-compose.yml)
 
 ```yaml
-version: '3'
+
 services:
   skywalking-oap:
     image: apache/skywalking-oap-server:8.9.1

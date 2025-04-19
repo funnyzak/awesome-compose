@@ -13,7 +13,6 @@ Project structure:
 
 ```yaml
 # author: leon<silenceace@gmail.com>
-version: '3.1'
 services:
   # https://hub.docker.com/r/sjqzhang/go-fastdfs/tags
   # https://github.com/sjqzhang/go-fastdfs

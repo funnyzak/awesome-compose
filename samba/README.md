@@ -12,7 +12,7 @@ Project structure:
 [_docker-compose.yml_](docker-compose.yml)
 
 ```yaml
-version: '3'
+
 services:
   samba:
     image: crazymax/samba:4.15.5

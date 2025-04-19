@@ -12,7 +12,6 @@ Project structure:
 [_docker-compose.yml_](docker-compose.yml)
 
 ```yaml
-version: '3.1'
 services:
   postgres:
     image: postgres:13.11
