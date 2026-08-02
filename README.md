@@ -34,6 +34,7 @@ These samples provide a starting point for how to integrate different services u
 - [`label-studio`](https://github.com/ycrun/awesome-compose/tree/main/label-studio) - LabelStudio Server application, Label Studio is a multi-type data labeling and annotation tool with standardized output format.
 - [`gitea`](https://github.com/ycrun/awesome-compose/tree/main/gitea) - Gitea Server application, Gitea is a painless self-hosted Git service.
 - [`minio`](https://github.com/ycrun/awesome-compose/tree/main/minio) - MinIO is a high performance, Kubernetes-native object storage server.
+- [`tailscale`](https://github.com/ycrun/awesome-compose/tree/main/tailscale) - Tailscale is a zero-config VPN built on WireGuard for securely connecting devices and containers into a private mesh network.
 
 <!--lint disable awesome-toc-->
 

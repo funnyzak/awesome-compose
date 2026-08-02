@@ -1,0 +1,28 @@
+  # author: leon<silenceace@gmail.com>
+
+name: tailscale
+
+services:
+  tailscale:
+    image: tailscale/tailscale:stable
+    container_name: tailscale
+    hostname: ${TS_HOSTNAME:-ts-container}
+
+    network_mode: host
+
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+
+    devices:
+      - /dev/net/tun:/dev/net/tun
+
+    volumes:
+      - ./state:/var/lib/tailscale
+
+    environment:
+      TS_AUTHKEY: ${TS_AUTHKEY}
+      TS_EXTRA_ARGS: "--login-server=${TS_LOGIN_SERVER:-https://controlplane.tailscale.com}"
+      TS_STATE_DIR: /var/lib/tailscale
+
+    restart: unless-stopped
